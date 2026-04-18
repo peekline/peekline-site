@@ -3,207 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peekline | Keep text in view on your Mac</title>
+  <title>Peekline | Your discreet notch reading strip</title>
   <meta
     name="description"
-    content="Peekline is a macOS app that turns the notch area into a focused reading strip for notes, prompts, scripts, and live text."
+    content="Peekline is a focused notch reading strip for macOS. Keep your script, notes, and prompts beside the camera without covering your workspace."
   >
   <meta property="og:title" content="Peekline">
   <meta
     property="og:description"
-    content="A focused reading strip for your MacBook notch. Keep text visible without covering your workspace."
+    content="Your discreet notch reading strip for macOS. Keep text beside the camera and stay in flow."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://peekline.app/">
-  <meta property="og:image" content="https://peekline.app/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="ambient ambient-left"></div>
-  <div class="ambient ambient-right"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="glow glow-left" aria-hidden="true"></div>
+  <div class="glow glow-right" aria-hidden="true"></div>
 
-  <div class="site-shell">
-    <header class="topbar">
+  <div class="page">
+    <header class="topbar reveal">
       <a class="brand" href="#top" aria-label="Peekline home">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-notch" aria-hidden="true"></span>
         <span>Peekline</span>
       </a>
 
       <nav class="nav">
         <a href="#features">Features</a>
-        <a href="#use-cases">Use cases</a>
-        <a href="#ship">Launch</a>
+        <a href="#how">How it works</a>
+        <a class="nav-cta" href="#preorder">Pre-order</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow">macOS utility for focused reading</p>
-          <h1>The notch becomes useful.</h1>
+          <div class="hero-badges">
+            <span class="badge">macOS app</span>
+            <span class="badge badge-soft">Pre-order open</span>
+          </div>
+
+          <p class="eyebrow">your discreet notch reading strip</p>
+          <h1>Read naturally. Stay in flow.</h1>
           <p class="lede">
-            Peekline keeps notes, prompts, scripts, and live text visible in a slim strip around
-            your MacBook notch, so you can keep reading without covering the work underneath.
+            Peekline keeps your script, notes, prompts, or checklist beside the camera in a slim
+            notch-aligned strip, so the text stays visible while your real workspace stays clear.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#ship">Launch the site</a>
-            <a class="button button-secondary" href="#features">See the product</a>
+            <a class="button button-primary" href="#preorder">Pre-order Peekline</a>
+            <a class="button button-secondary" href="#features">See features</a>
           </div>
 
-          <div class="signal-grid">
-            <article class="signal-card">
-              <strong>For developers</strong>
-              <span>Keep prompts, API notes, or code snippets in sight.</span>
-            </article>
-            <article class="signal-card">
-              <strong>For presenters</strong>
-              <span>Read the next line without littering the entire desktop.</span>
-            </article>
-            <article class="signal-card">
-              <strong>For writers</strong>
-              <span>Pin drafts, outlines, and checklists near the eye line.</span>
-            </article>
-          </div>
+          <p class="meta">
+            Built for MacBook displays with a notch · Native feel · No subscription pressure
+          </p>
         </div>
 
         <div class="hero-visual reveal" aria-hidden="true">
-          <div class="device-frame">
-            <div class="device-screen">
-              <div class="toolbar"></div>
-              <div class="workspace-window window-left">
-                <span class="window-label">Editor</span>
-                <p>Polish onboarding copy for first launch.</p>
+          <div class="mac-window">
+            <div class="window-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="window-canvas">
+              <div class="floating-card floating-left">
+                <span class="floating-label">Prompt</span>
+                <p>Answer the customer clearly and keep the call moving.</p>
               </div>
-              <div class="workspace-window window-right">
-                <span class="window-label">Checklist</span>
-                <p>Review CTA, screenshots, and pricing notes.</p>
+
+              <div class="floating-card floating-right">
+                <span class="floating-label">Notes</span>
+                <p>Launch pricing, key points, and the next demo line.</p>
               </div>
-              <div class="peekline-strip">
-                <div class="notch-mask"></div>
-                <div class="strip-copy">
-                  <span class="strip-tag">Peekline</span>
-                  <p>
-                    Keep the next paragraph visible while the real workspace stays untouched.
-                  </p>
+
+              <div class="peekline-demo">
+                <div class="notch"></div>
+                <div class="peekline-surface">
+                  <span class="surface-label">Peekline</span>
+                  <p>Keep the next sentence near the camera without turning it into another window.</p>
                 </div>
               </div>
             </div>
-            <div class="device-base"></div>
           </div>
         </div>
       </section>
 
-      <section class="value-strip reveal">
+      <section class="ticker reveal" aria-label="product highlights">
+        <div class="ticker-track">
+          <span>Script sits by your camera</span>
+          <span>Read while keeping focus</span>
+          <span>No oversized overlay window</span>
+          <span>Built for notch MacBooks</span>
+          <span>Private pre-order now open</span>
+          <span>Script sits by your camera</span>
+          <span>Read while keeping focus</span>
+          <span>No oversized overlay window</span>
+        </div>
+      </section>
+
+      <section class="intro reveal">
         <p>
-          Not another overlay app. Not another note window. Peekline is a narrow reading surface
-          placed exactly where your eyes already travel.
+          Peekline is for moments when you need text close to your eyes, but do not want a teleprompter,
+          sticky note, or giant overlay fighting with the rest of your desktop.
         </p>
       </section>
 
       <section class="section" id="features">
         <div class="section-heading reveal">
           <p class="eyebrow">Features</p>
-          <h2>Built for the notch, not squeezed around it.</h2>
+          <h2>Made for the notch instead of working around it.</h2>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card reveal">
-            <span class="feature-number">01</span>
-            <h3>Always glanceable</h3>
-            <p>A thin text surface that feels present when you need it and invisible when you do not.</p>
+            <span class="feature-index">01</span>
+            <h3>Camera-adjacent reading</h3>
+            <p>Keep copy, prompts, and notes near the eye line where they are actually useful.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-number">02</span>
-            <h3>Native-looking macOS feel</h3>
-            <p>Quiet materials, sharp type, and a layout that fits premium hardware instead of fighting it.</p>
+            <span class="feature-index">02</span>
+            <h3>Minimal surface</h3>
+            <p>A narrow strip instead of another full app window competing for your attention.</p>
           </article>
           <article class="feature-card reveal">
-            <span class="feature-number">03</span>
-            <h3>Useful for real work</h3>
-            <p>Prompts, scripts, stage notes, checklists, and markdown all make sense in the same strip.</p>
+            <span class="feature-index">03</span>
+            <h3>Premium macOS feel</h3>
+            <p>Quiet materials, restrained motion, and a layout that belongs on modern Mac hardware.</p>
           </article>
         </div>
       </section>
 
-      <section class="section showcase" id="use-cases">
-        <div class="showcase-copy reveal">
-          <p class="eyebrow">Use cases</p>
-          <h2>Read while you keep doing the actual task.</h2>
-          <p class="section-copy">
-            Peekline is for moments when text should stay near your focus, but a full-size window
-            would be too much. The strip works well for coding, demoing, live presenting, writing,
-            customer support, or reviewing structured notes.
-          </p>
-        </div>
-
-        <div class="showcase-stack reveal">
-          <article class="stack-card">
-            <span class="stack-title">Developer flow</span>
-            <p>Keep prompts and reference notes visible while coding in the main editor.</p>
-          </article>
-          <article class="stack-card">
-            <span class="stack-title">Presentation mode</span>
-            <p>Use a calm teleprompter strip for talks, recordings, and walkthroughs.</p>
-          </article>
-          <article class="stack-card">
-            <span class="stack-title">Writing sessions</span>
-            <p>Pin outlines, edits, or research bullets above the draft without covering the page.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section steps-section">
+      <section class="section split" id="how">
         <div class="section-heading reveal">
           <p class="eyebrow">How it works</p>
-          <h2>Three steps to a cleaner reading surface.</h2>
+          <h2>Drop text in. Keep doing the actual work.</h2>
         </div>
 
         <div class="steps">
           <article class="step reveal">
             <span>1</span>
-            <p>Open the text you want nearby: notes, markdown, script fragments, or prompts.</p>
+            <p>Paste or open your notes, prompt, checklist, or script.</p>
           </article>
           <article class="step reveal">
             <span>2</span>
-            <p>Place it into Peekline so the notch area becomes a slim reading strip.</p>
+            <p>Peekline places it into a calm notch-aligned reading strip.</p>
           </article>
           <article class="step reveal">
             <span>3</span>
-            <p>Keep working in your actual app while Peekline handles only the reference text.</p>
+            <p>You keep coding, presenting, writing, or recording without losing context.</p>
           </article>
         </div>
       </section>
 
-      <section class="ship reveal" id="ship">
-        <div class="ship-copy">
-          <p class="eyebrow">Launch</p>
-          <h2>Ready for GitHub Pages.</h2>
+      <section class="section preorder reveal" id="preorder">
+        <div class="preorder-copy">
+          <p class="eyebrow">Pre-order</p>
+          <h2>Reserve early access to Peekline.</h2>
           <p>
-            This folder is now structured as a standalone static landing page for Peekline. It can
-            be pushed to GitHub and published as a project site or mapped to a custom domain later.
+            The public site is ready. The next step is collecting interest and routing people to a
+            pre-order or waitlist flow while the app is finishing up.
           </p>
         </div>
 
-        <div class="ship-panel">
-          <div class="ship-row">
-            <span>Stack</span>
-            <strong>Static HTML, CSS, JS</strong>
-          </div>
-          <div class="ship-row">
-            <span>Deploy target</span>
-            <strong>GitHub Pages</strong>
-          </div>
-          <div class="ship-row">
-            <span>Next step</span>
-            <strong>Connect remote and push repository</strong>
-          </div>
+        <div class="preorder-panel">
+          <a class="button button-primary button-large" href="mailto:hello@peekline.app?subject=Peekline%20Pre-order">
+            Pre-order now
+          </a>
+          <p class="panel-note">Temporary CTA uses email for pre-orders. This can be swapped to Stripe, Gumroad, or a custom checkout.</p>
         </div>
       </section>
     </main>
