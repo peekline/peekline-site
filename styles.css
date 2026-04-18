@@ -24,7 +24,8 @@ body {
   font-family: "Geist", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 26%),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 24%),
+    radial-gradient(circle at 20% 18%, rgba(126, 205, 255, 0.07), transparent 20%),
     linear-gradient(180deg, #0b1014 0%, #05080b 58%, #030506 100%);
 }
 
@@ -63,6 +64,17 @@ h1 {
   font-weight: 700;
 }
 
+.topbar-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 14px;
+}
+
 .hero {
   padding: 18px 0 0;
 }
@@ -70,15 +82,32 @@ h1 {
 .notch-stage {
   max-width: 900px;
   margin: 0 auto 36px;
+  position: relative;
+}
+
+.notch-stage::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  width: 280px;
+  height: 120px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(126, 205, 255, 0.08);
+  filter: blur(34px);
+  pointer-events: none;
 }
 
 .marquee {
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent, white 12%, white 88%, transparent);
 }
 
 .marquee-track {
-  display: inline-flex;
+  display: flex;
   width: max-content;
   min-width: max-content;
   align-items: center;
@@ -86,12 +115,18 @@ h1 {
   font-size: 26px;
   letter-spacing: -0.04em;
   font-weight: 500;
-  animation: marquee-left 18s linear infinite;
+  animation: marquee-left 12s linear infinite;
   will-change: transform;
 }
 
 .marquee-track.reverse {
-  animation: marquee-right 18s linear infinite;
+  animation: marquee-right 12s linear infinite;
+}
+
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .marquee-track span {
@@ -124,6 +159,7 @@ h1 {
   background: linear-gradient(180deg, #010203 0%, #0a0f13 55%, #030506 100%);
   box-shadow: var(--shadow);
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .notch::before {
@@ -142,7 +178,7 @@ h1 {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
   transform: skewX(-20deg);
-  animation: sheen 2.2s linear infinite;
+  animation: sheen 1.9s linear infinite;
 }
 
 .camera-dot {
@@ -235,7 +271,9 @@ h1 {
 }
 
 .button:hover,
-.button:focus-visible {
+.button:focus-visible,
+.topbar-cta:hover,
+.topbar-cta:focus-visible {
   transform: translateY(-1px);
 }
 
@@ -296,9 +334,17 @@ h1 {
     width: min(100% - 20px, 1120px);
   }
 
+  .topbar {
+    gap: 10px;
+  }
+
   .menu-bar {
     gap: 10px;
     font-size: 12px;
+  }
+
+  .menu-bar span:nth-child(n + 4) {
+    display: none;
   }
 
   .marquee-track {
