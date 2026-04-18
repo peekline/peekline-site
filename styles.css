@@ -288,17 +288,6 @@ h1 {
   font-size: 14px;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 520ms ease, transform 520ms ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @keyframes notch-text-scroll {
   from {
     transform: translateY(0);
