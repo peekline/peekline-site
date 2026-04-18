@@ -119,22 +119,34 @@ h2 {
 .track-inner {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 0;
   min-width: max-content;
   color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  animation: marquee-left 18s linear infinite;
+  animation: marquee-left 20s linear infinite;
 }
 
 .track-inner.reverse {
   animation-name: marquee-right;
 }
 
-.track-inner span::after {
+.track-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.track-group span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.track-group span::after {
   content: "·";
   margin-left: 24px;
+  margin-right: 24px;
   color: rgba(255, 255, 255, 0.24);
 }
 
@@ -424,12 +436,12 @@ h2 {
   }
 
   .track-inner {
-    gap: 18px;
     font-size: 11px;
   }
 
-  .track-inner span::after {
+  .track-group span::after {
     margin-left: 18px;
+    margin-right: 18px;
   }
 
   .notch-row {
