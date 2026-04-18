@@ -43,6 +43,8 @@ h1 {
   width: 100%;
   background: #050507;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 4;
 }
 
 .topbar {
@@ -94,6 +96,8 @@ h1 {
 }
 
 .page-shell {
+  position: relative;
+  z-index: 3;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
@@ -101,6 +105,51 @@ h1 {
 .hero {
   padding: 0 0 64px;
   margin-top: -1px;
+}
+
+.device-stage {
+  position: fixed;
+  inset: 52px 0 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.device {
+  position: absolute;
+  opacity: 0.42;
+  filter: blur(0.2px);
+}
+
+.device-left {
+  left: -4vw;
+  top: 12vh;
+  transform: rotate(-14deg) scale(0.88);
+}
+
+.device-right {
+  right: -3vw;
+  top: 18vh;
+  transform: rotate(11deg) scale(0.98);
+}
+
+.device-screen {
+  width: 520px;
+  height: 320px;
+  border-radius: 24px 24px 16px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)),
+    linear-gradient(180deg, rgba(214, 218, 225, 0.92), rgba(158, 163, 173, 0.88));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.18);
+}
+
+.device-base {
+  width: 640px;
+  height: 28px;
+  margin: 0 auto;
+  border-radius: 0 0 90px 90px;
+  background: linear-gradient(180deg, rgba(240, 242, 246, 0.95), rgba(173, 177, 186, 0.92));
 }
 
 .notch-stage {
@@ -186,6 +235,7 @@ h1 {
   line-height: 1.08;
   animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
 }
 
 .peekline-notch-track span {
@@ -317,17 +367,35 @@ h1 {
     width: min(100% - 20px, 1120px);
   }
 
+  .device-stage {
+    inset: 46px 0 0;
+  }
+
+  .device-left {
+    left: -22vw;
+    top: 16vh;
+    transform: rotate(-16deg) scale(0.52);
+  }
+
+  .device-right {
+    right: -26vw;
+    top: 26vh;
+    transform: rotate(14deg) scale(0.56);
+  }
+
   .peekline-notch-shell {
     height: 132px;
   }
 
   .peekline-notch-marquee {
-    inset: 28px 24px 14px 24px;
+    inset: 28px 28px 14px 28px;
   }
 
   .peekline-notch-track {
     gap: 10px;
-    font-size: 10px;
+    font-size: 9px;
+    line-height: 1.04;
+    animation-duration: 14s;
   }
 
   .hero-copy {
