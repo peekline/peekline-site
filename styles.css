@@ -157,64 +157,105 @@ h3 {
 
 .hero-peekline {
   position: absolute;
-  top: -12px;
+  top: -10px;
   left: 50%;
-  width: min(360px, calc(100% - 120px));
+  width: min(620px, calc(100% - 120px));
   transform: translateX(-50%);
-  padding-top: 54px;
+  padding-top: 0;
   z-index: 3;
-  animation: peekline-float 5.8s ease-in-out infinite;
+  display: grid;
+  justify-items: center;
+  animation: peekline-breathe 6.2s ease-in-out infinite;
+}
+
+.hero-peekline-copy {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 0 18px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-peekline-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+  transform: translateY(-50%);
+}
+
+.hero-peekline-copy span {
+  position: relative;
+  padding: 0 10px;
+  background: linear-gradient(180deg, rgba(8, 12, 16, 0.96), rgba(8, 12, 16, 0.96));
+}
+
+.hero-peekline-copy-bottom {
+  margin-top: 14px;
 }
 
 .hero-peekline-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 190px;
-  height: 56px;
-  transform: translateX(-50%);
-  border-radius: 0 0 22px 22px;
-  background: linear-gradient(180deg, #020305 0%, #0c1116 100%);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-}
-
-.hero-peekline-strip {
   position: relative;
-  padding: 18px 22px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
-    rgba(11, 16, 20, 0.92);
+  width: 196px;
+  height: 56px;
+  margin-top: 8px;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(180deg, #020305 0%, #0a0f14 55%, #040608 100%);
   box-shadow:
-    0 24px 70px rgba(0, 0, 0, 0.42),
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
-  backdrop-filter: blur(18px);
+    0 22px 60px rgba(0, 0, 0, 0.46),
+    0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  overflow: hidden;
 }
 
-.hero-peekline-strip::before {
+.hero-peekline-notch::before {
   content: "";
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(152, 242, 194, 0.1), rgba(255, 255, 255, 0.02));
-  opacity: 0.7;
-  z-index: -1;
-  filter: blur(14px);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 45%);
 }
 
-.hero-peekline-label {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.72);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 11px;
+.hero-peekline-sensor {
+  position: absolute;
+  left: 50%;
+  top: 13px;
+  width: 44px;
+  height: 6px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.hero-peekline-strip p {
-  margin-top: 8px;
-  color: #f1ede2;
-  line-height: 1.5;
+.hero-peekline-glow {
+  position: absolute;
+  top: 24px;
+  width: 240px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(152, 242, 194, 0.08);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.hero-peekline-sheen {
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  height: 76px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 70%);
+  filter: blur(18px);
+  opacity: 0.5;
+  animation: peekline-sheen 4.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hero-badges {
@@ -600,13 +641,25 @@ h3 {
   }
 }
 
-@keyframes peekline-float {
+@keyframes peekline-breathe {
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+@keyframes peekline-sheen {
+  0%,
+  100% {
+    transform: translateX(-90px);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateX(90px);
+    opacity: 0.52;
   }
 }
 
@@ -640,7 +693,17 @@ h3 {
 
   .hero-peekline {
     top: -6px;
-    width: calc(100% - 30px);
+    width: calc(100% - 20px);
+  }
+
+  .hero-peekline-copy {
+    gap: 10px;
+    padding: 0 6px;
+    font-size: 10px;
+  }
+
+  .hero-peekline-copy span:last-child {
+    display: none;
   }
 
   .window-canvas {
