@@ -48,7 +48,7 @@ h1 {
 .topbar {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
-  min-height: 54px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +61,7 @@ h1 {
   align-items: center;
   gap: 14px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .apple,
@@ -77,12 +77,12 @@ h1 {
 .topbar-cta {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 0 14px;
+  min-height: 30px;
+  padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
-  font-size: 14px;
+  font-size: 13px;
   transition: transform 180ms ease, background 180ms ease;
 }
 
@@ -100,26 +100,17 @@ h1 {
 
 .hero {
   padding: 0 0 64px;
+  margin-top: -1px;
 }
 
 .notch-stage {
   position: relative;
-  width: min(760px, 100%);
+  width: min(380px, 100%);
   margin: 0 auto;
 }
 
 .notch-stage::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 12px;
-  width: 520px;
-  height: 180px;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: rgba(167, 138, 220, 0.14);
-  filter: blur(52px);
-  pointer-events: none;
+  content: none;
 }
 
 .peekline-notch {
@@ -130,7 +121,7 @@ h1 {
 .peekline-notch-shell {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 120px;
   overflow: hidden;
 }
 
@@ -139,7 +130,7 @@ h1 {
   inset: 0;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 30px 90px rgba(0, 0, 0, 0.46));
+  filter: none;
 }
 
 .peekline-notch-vector path {
@@ -167,9 +158,9 @@ h1 {
 .camera-dot {
   position: absolute;
   left: 50%;
-  top: 18px;
-  width: 44px;
-  height: 6px;
+  top: 10px;
+  width: 24px;
+  height: 4px;
   transform: translateX(-50%);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
@@ -178,7 +169,7 @@ h1 {
 
 .peekline-notch-marquee {
   position: absolute;
-  inset: 42px 34px 24px;
+  inset: 24px 18px 10px;
   overflow: hidden;
   mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
 }
@@ -186,14 +177,14 @@ h1 {
 .peekline-notch-track {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 10px;
   width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
-  font-size: clamp(19px, 2.4vw, 28px);
+  font-size: clamp(10px, 1.05vw, 13px);
   letter-spacing: -0.02em;
-  line-height: 1.18;
-  animation: notch-text-scroll 14s linear infinite;
+  line-height: 1.08;
+  animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
 }
 
@@ -204,7 +195,7 @@ h1 {
 
 .hero-copy {
   max-width: 860px;
-  margin: 28px auto 0;
+  margin: 20px auto 0;
   text-align: center;
 }
 
@@ -318,7 +309,7 @@ h1 {
 @media (max-width: 720px) {
   .topbar {
     width: min(100% - 20px, 1200px);
-    min-height: 50px;
+    min-height: 40px;
     gap: 10px;
   }
 
@@ -336,15 +327,16 @@ h1 {
   }
 
   .peekline-notch-shell {
-    height: 198px;
+    height: 112px;
   }
 
   .peekline-notch-marquee {
-    inset: 36px 20px 16px;
+    inset: 22px 14px 10px;
   }
 
   .peekline-notch-track {
-    gap: 16px;
+    gap: 8px;
+    font-size: 10px;
   }
 
   .hero-copy {
