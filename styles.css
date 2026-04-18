@@ -1,13 +1,12 @@
 :root {
   color-scheme: dark;
-  --bg: #040608;
-  --bg-soft: #0b1015;
-  --panel: rgba(255, 255, 255, 0.04);
-  --panel-strong: rgba(255, 255, 255, 0.06);
+  --bg: #05080b;
+  --bg-soft: #0d1217;
+  --text: #f6f3ea;
+  --muted: #aeb4bb;
   --line: rgba(255, 255, 255, 0.1);
-  --text: #f5f1e7;
-  --muted: #b0b6bb;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --panel: rgba(255, 255, 255, 0.04);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
 }
 
 * {
@@ -25,9 +24,8 @@ body {
   font-family: "Geist", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 24%),
-    radial-gradient(circle at right, rgba(255, 255, 255, 0.04), transparent 28%),
-    linear-gradient(180deg, #0b1015 0%, #040608 56%, #020304 100%);
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 26%),
+    linear-gradient(180deg, #0b1014 0%, #05080b 58%, #030506 100%);
 }
 
 a {
@@ -36,50 +34,21 @@ a {
 }
 
 p,
-h1,
-h2 {
+h1 {
   margin: 0;
 }
 
-.glow {
-  position: fixed;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.glow-left {
-  top: -200px;
-  left: -160px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.glow-right {
-  right: -120px;
-  top: 80px;
-  background: rgba(170, 220, 255, 0.08);
-}
-
 .page-shell {
-  position: relative;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding-bottom: 88px;
+  padding-bottom: 72px;
 }
 
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 18px 0;
-  backdrop-filter: blur(18px);
+  padding: 18px 0 10px;
 }
 
 .menu-bar {
@@ -94,149 +63,153 @@ h2 {
   font-weight: 700;
 }
 
-.mini-cta {
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
 .hero {
-  padding: 38px 0 24px;
+  padding: 18px 0 0;
 }
 
-.notch-band {
-  position: relative;
-  max-width: 780px;
-  margin: 0 auto 42px;
+.notch-stage {
+  max-width: 900px;
+  margin: 0 auto 36px;
 }
 
-.track {
+.marquee {
   overflow: hidden;
   white-space: nowrap;
 }
 
-.track-inner {
+.marquee-track {
   display: inline-flex;
-  align-items: center;
-  gap: 0;
+  width: max-content;
   min-width: max-content;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  animation: marquee-left 20s linear infinite;
-}
-
-.track-inner.reverse {
-  animation-name: marquee-right;
-}
-
-.track-group {
-  display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 26px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  animation: marquee-left 18s linear infinite;
+  will-change: transform;
 }
 
-.track-group span {
+.marquee-track.reverse {
+  animation: marquee-right 18s linear infinite;
+}
+
+.marquee-track span {
   display: inline-flex;
   align-items: center;
 }
 
-.track-group span::after {
-  content: "·";
-  margin-left: 24px;
-  margin-right: 24px;
-  color: rgba(255, 255, 255, 0.24);
+.marquee-track span::after {
+  content: "";
+  width: 34px;
 }
 
 .notch-row {
   display: grid;
-  grid-template-columns: 1fr 196px 1fr;
-  gap: 14px;
+  grid-template-columns: 1fr 198px 1fr;
+  gap: 18px;
   align-items: center;
-  margin: 10px 0 12px;
+  margin: 8px 0 10px;
 }
 
-.side-line {
+.notch-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
 }
 
-.center-notch {
+.notch {
   position: relative;
   height: 56px;
   border-radius: 0 0 22px 22px;
-  background: linear-gradient(180deg, #010203 0%, #090d11 55%, #030506 100%);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42);
+  background: linear-gradient(180deg, #010203 0%, #0a0f13 55%, #030506 100%);
+  box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.center-notch::before {
+.notch::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 44%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 48%);
 }
 
-.center-notch::after {
+.notch::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -40%;
-  width: 40%;
+  left: -35%;
+  width: 35%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: skewX(-24deg);
-  animation: notch-sheen 4.2s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: skewX(-20deg);
+  animation: sheen 2.2s linear infinite;
 }
 
-.sensor {
+.camera-dot {
   position: absolute;
   left: 50%;
   top: 13px;
-  width: 46px;
+  width: 44px;
   height: 6px;
-  border-radius: 999px;
   transform: translateX(-50%);
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
 }
 
 .hero-copy {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   text-align: center;
 }
 
-.eyebrow {
-  color: rgba(255, 255, 255, 0.64);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 11px;
+.pill-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 13px;
+}
+
+.pill-muted {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .hero h1 {
+  max-width: 10ch;
+  margin: 0 auto;
   font-family: "Instrument Serif", serif;
+  font-size: clamp(54px, 8vw, 104px);
   font-weight: 400;
+  line-height: 0.92;
   letter-spacing: -0.05em;
 }
 
-.hero h1 {
-  margin-top: 10px;
-  font-size: clamp(58px, 8vw, 108px);
-  line-height: 0.92;
+.kicker {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: lowercase;
+  font-size: 18px;
 }
 
 .lede,
-.meta,
-.proof p,
-.contact-card span {
+.meta {
   color: var(--muted);
   line-height: 1.68;
 }
 
 .lede {
-  max-width: 38rem;
+  max-width: 40rem;
   margin: 18px auto 0;
   font-size: 20px;
 }
@@ -255,24 +228,20 @@ h2 {
   justify-content: center;
   min-height: 50px;
   padding: 0 22px;
-  border-radius: 999px;
   border: 1px solid transparent;
+  border-radius: 999px;
   font-weight: 600;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
 
 .button:hover,
-.button:focus-visible,
-.mini-cta:hover,
-.mini-cta:focus-visible,
-.contact-card:hover,
-.contact-card:focus-visible {
+.button:focus-visible {
   transform: translateY(-1px);
 }
 
 .button-primary {
   color: #05080b;
-  background: linear-gradient(180deg, #ffffff 0%, #e8ecef 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e9ecef 100%);
 }
 
 .button-secondary {
@@ -282,51 +251,6 @@ h2 {
 
 .meta {
   font-size: 14px;
-}
-
-.contact-card {
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--panel);
-}
-
-.proof,
-.contacts {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.proof {
-  padding: 26px 0 14px;
-  text-align: center;
-}
-
-.proof p {
-  font-size: clamp(22px, 2.5vw, 30px);
-}
-
-.contacts {
-  padding-top: 34px;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.contact-card {
-  display: block;
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.contact-card strong {
-  display: block;
-  margin-top: 8px;
-  font-size: 22px;
-  letter-spacing: -0.03em;
 }
 
 .reveal {
@@ -358,15 +282,12 @@ h2 {
   }
 }
 
-@keyframes notch-sheen {
-  0%,
-  100% {
-    transform: translateX(0) skewX(-24deg);
-    opacity: 0;
+@keyframes sheen {
+  from {
+    transform: translateX(0) skewX(-20deg);
   }
-  50% {
-    transform: translateX(440%) skewX(-24deg);
-    opacity: 1;
+  to {
+    transform: translateX(520%) skewX(-20deg);
   }
 }
 
@@ -380,17 +301,8 @@ h2 {
     font-size: 12px;
   }
 
-  .notch-band {
-    margin-bottom: 32px;
-  }
-
-  .track-inner {
-    font-size: 11px;
-  }
-
-  .track-group span::after {
-    margin-left: 18px;
-    margin-right: 18px;
+  .marquee-track {
+    font-size: 19px;
   }
 
   .notch-row {
@@ -398,11 +310,11 @@ h2 {
     gap: 10px;
   }
 
-  .center-notch {
+  .notch {
     height: 52px;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .kicker {
+    font-size: 16px;
   }
 }
