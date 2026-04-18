@@ -105,7 +105,7 @@ h1 {
 
 .notch-stage {
   position: relative;
-  width: min(380px, 100%);
+  width: min(456px, 100%);
   margin: 0 auto;
 }
 
@@ -121,7 +121,7 @@ h1 {
 .peekline-notch-shell {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 144px;
   overflow: hidden;
 }
 
@@ -146,10 +146,10 @@ h1 {
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 28%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26.4 31.4 Q26.4 5 0 5 L26.4 5 L26.4 0 L477.6 0 L477.6 5 L504 5 Q477.6 5 477.6 31.4 L477.6 133.6 Q477.6 160 451.2 160 L52.8 160 Q26.4 160 26.4 133.6 Z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26 30 Q26 0 0 0 L26 0 L26 0 L478 0 L478 0 L504 0 Q478 0 478 30 L478 134 Q478 160 449 160 L55 160 Q26 160 26 134 Z'/%3E%3C/svg%3E");
   -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26.4 31.4 Q26.4 5 0 5 L26.4 5 L26.4 0 L477.6 0 L477.6 5 L504 5 Q477.6 5 477.6 31.4 L477.6 133.6 Q477.6 160 451.2 160 L52.8 160 Q26.4 160 26.4 133.6 Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26 30 Q26 0 0 0 L26 0 L26 0 L478 0 L478 0 L504 0 Q478 0 478 30 L478 134 Q478 160 449 160 L55 160 Q26 160 26 134 Z'/%3E%3C/svg%3E");
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
   pointer-events: none;
@@ -158,8 +158,8 @@ h1 {
 .camera-dot {
   position: absolute;
   left: 50%;
-  top: 10px;
-  width: 24px;
+  top: 12px;
+  width: 28px;
   height: 4px;
   transform: translateX(-50%);
   border-radius: 999px;
@@ -169,7 +169,7 @@ h1 {
 
 .peekline-notch-marquee {
   position: absolute;
-  inset: 24px 18px 10px;
+  inset: 30px 30px 16px 34px;
   overflow: hidden;
   mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
 }
@@ -177,11 +177,11 @@ h1 {
 .peekline-notch-track {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
-  font-size: clamp(10px, 1.05vw, 13px);
+  font-size: clamp(10px, 1vw, 12px);
   letter-spacing: -0.02em;
   line-height: 1.08;
   animation: notch-text-scroll 12s linear infinite;
@@ -191,6 +191,8 @@ h1 {
 .peekline-notch-track span {
   display: block;
   white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .hero-copy {
@@ -327,15 +329,15 @@ h1 {
   }
 
   .peekline-notch-shell {
-    height: 112px;
+    height: 132px;
   }
 
   .peekline-notch-marquee {
-    inset: 22px 14px 10px;
+    inset: 28px 24px 14px 24px;
   }
 
   .peekline-notch-track {
-    gap: 8px;
+    gap: 10px;
     font-size: 10px;
   }
 
