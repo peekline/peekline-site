@@ -101,7 +101,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 18px 0 10px;
+  padding: 14px 0 8px;
 }
 
 .brand-lockup {
@@ -179,13 +179,13 @@ h1 {
 }
 
 .hero {
-  padding: 30px 0 0;
+  padding: 8px 0 0;
 }
 
 .hero-panel {
   max-width: 980px;
   margin: 0 auto;
-  padding: 26px 26px 30px;
+  padding: 10px 26px 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 34px;
   background:
@@ -197,7 +197,7 @@ h1 {
 
 .notch-stage {
   max-width: 900px;
-  margin: 0 auto 36px;
+  margin: -6px auto 30px;
   position: relative;
 }
 
@@ -205,7 +205,7 @@ h1 {
   content: "";
   position: absolute;
   left: 50%;
-  top: 34px;
+  top: 24px;
   width: 520px;
   height: 170px;
   transform: translateX(-50%);
@@ -223,70 +223,43 @@ h1 {
 .peekline-notch-shell {
   position: relative;
   width: 100%;
-  height: 258px;
-}
-
-.peekline-notch-top {
-  position: absolute;
-  left: 7%;
-  right: 7%;
-  top: 0;
-  height: 40px;
-  background: #040406;
-}
-
-.peekline-notch-top::before,
-.peekline-notch-top::after {
-  content: "";
-  position: relative;
-  display: block;
-  width: 30px;
-  height: 40px;
-  background: #040406;
-}
-
-.peekline-notch-top::before {
-  position: absolute;
-  left: -30px;
-  top: 0;
-  border-radius: 18px 0 0 0;
-}
-
-.peekline-notch-top::after {
-  position: absolute;
-  right: -30px;
-  top: 0;
-  border-radius: 0 18px 0 0;
-}
-
-.peekline-notch-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 26px;
-  bottom: 0;
-  padding: 30px 34px 26px;
-  border-radius: 0 0 34px 34px;
-  background: linear-gradient(180deg, #050608 0%, #0b0812 100%);
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.46),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  height: 240px;
   overflow: hidden;
 }
 
-.peekline-notch-body::before {
-  content: "";
+.peekline-notch-vector {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 30px 90px rgba(0, 0, 0, 0.46));
+}
+
+.peekline-notch-vector path {
+  fill: #06060a;
+  stroke: rgba(255, 255, 255, 0.04);
+  stroke-width: 1;
+}
+
+.peekline-notch-shell::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 30%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 38%);
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26.4 31.4 Q26.4 5 0 5 L26.4 5 L26.4 0 L477.6 0 L477.6 5 L504 5 Q477.6 5 477.6 31.4 L477.6 133.6 Q477.6 160 451.2 160 L52.8 160 Q26.4 160 26.4 133.6 Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26.4 31.4 Q26.4 5 0 5 L26.4 5 L26.4 0 L477.6 0 L477.6 5 L504 5 Q477.6 5 477.6 31.4 L477.6 133.6 Q477.6 160 451.2 160 L52.8 160 Q26.4 160 26.4 133.6 Z'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
   pointer-events: none;
 }
 
 .peekline-notch-marquee {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  inset: 42px 34px 24px;
   overflow: hidden;
   mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
 }
@@ -313,12 +286,13 @@ h1 {
 .camera-dot {
   position: absolute;
   left: 50%;
-  top: 11px;
+  top: 18px;
   width: 44px;
   height: 6px;
   transform: translateX(-50%);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
+  z-index: 2;
 }
 
 .hero-copy {
@@ -487,22 +461,16 @@ h1 {
   }
 
   .hero-panel {
-    padding: 18px 16px 24px;
+    padding: 6px 16px 24px;
     border-radius: 26px;
   }
 
   .peekline-notch-shell {
-    height: 210px;
+    height: 198px;
   }
 
-  .peekline-notch-top {
-    left: 8%;
-    right: 8%;
-  }
-
-  .peekline-notch-body {
-    padding: 26px 20px 18px;
-    border-radius: 0 0 26px 26px;
+  .peekline-notch-marquee {
+    inset: 36px 20px 16px;
   }
 
   .peekline-notch-track {
