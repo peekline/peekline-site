@@ -237,7 +237,7 @@ h1 {
   transform: translateZ(0);
 }
 
-.peekline-notch-track span {
+.peekline-notch-track p {
   display: block;
   width: 100%;
   white-space: nowrap;
