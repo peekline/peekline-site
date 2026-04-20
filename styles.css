@@ -42,7 +42,6 @@ h1 {
 .topbar-wrap {
   width: 100%;
   background: #050507;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   position: relative;
   z-index: 4;
 }
@@ -55,6 +54,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .menu-bar {
@@ -155,6 +155,7 @@ h1 {
   position: relative;
   width: clamp(280px, 42vw, 456px);
   margin: 0 auto;
+  transform: translateY(-1px);
 }
 
 .notch-stage::before {
