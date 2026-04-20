@@ -43,7 +43,7 @@ h1 {
   width: 100%;
   background: linear-gradient(180deg, rgba(236, 238, 241, 0.97), rgba(185, 189, 196, 0.94));
   position: relative;
-  z-index: 4;
+  z-index: 2;
 }
 
 .topbar {
@@ -97,14 +97,14 @@ h1 {
 
 .page-shell {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
 
 .hero {
   padding: 0 0 64px;
-  margin-top: -3px;
+  margin-top: -42px;
 }
 
 .device-stage {
@@ -156,7 +156,8 @@ h1 {
   position: relative;
   width: clamp(280px, 42vw, 456px);
   margin: 0 auto;
-  transform: translateY(-2px);
+  z-index: 7;
+  transform: none;
 }
 
 .notch-stage::before {
