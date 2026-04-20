@@ -153,7 +153,7 @@ h1 {
 
 .notch-stage {
   position: relative;
-  width: min(456px, 100%);
+  width: clamp(280px, 42vw, 456px);
   margin: 0 auto;
 }
 
@@ -349,6 +349,25 @@ h1 {
   }
 }
 
+@media (max-width: 1024px) {
+  .notch-stage {
+    width: min(360px, 62vw);
+  }
+
+  .peekline-notch-shell {
+    height: 122px;
+  }
+
+  .peekline-notch-marquee {
+    inset: 26px 22px 14px;
+  }
+
+  .peekline-notch-track {
+    gap: 10px;
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 720px) {
   .topbar {
     width: min(100% - 20px, 1200px);
@@ -385,17 +404,21 @@ h1 {
     transform: rotate(14deg) scale(0.56);
   }
 
+  .notch-stage {
+    width: min(300px, 74vw);
+  }
+
   .peekline-notch-shell {
-    height: 132px;
+    height: 104px;
   }
 
   .peekline-notch-marquee {
-    inset: 28px 20px 14px;
+    inset: 22px 18px 12px;
   }
 
   .peekline-notch-track {
-    gap: 10px;
-    font-size: 9px;
+    gap: 8px;
+    font-size: 8px;
     line-height: 1.04;
     animation-duration: 14s;
   }
