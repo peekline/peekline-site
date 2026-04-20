@@ -41,7 +41,7 @@ h1 {
 
 .topbar-wrap {
   width: 100%;
-  background: linear-gradient(180deg, rgba(223, 226, 232, 0.95), rgba(162, 167, 177, 0.92));
+  background: linear-gradient(180deg, rgba(236, 238, 241, 0.97), rgba(185, 189, 196, 0.94));
   position: relative;
   z-index: 4;
 }
@@ -54,7 +54,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(30, 33, 39, 0.18);
 }
 
 .menu-bar {
@@ -104,7 +104,7 @@ h1 {
 
 .hero {
   padding: 0 0 64px;
-  margin-top: -2px;
+  margin-top: -3px;
 }
 
 .device-stage {
@@ -156,7 +156,7 @@ h1 {
   position: relative;
   width: clamp(280px, 42vw, 456px);
   margin: 0 auto;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .notch-stage::before {
@@ -173,6 +173,7 @@ h1 {
   width: 100%;
   height: 144px;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .peekline-notch-vector {
@@ -207,7 +208,7 @@ h1 {
 
 .peekline-notch-marquee {
   position: absolute;
-  inset: 18px 10px 12px;
+  inset: 17px 10px 12px;
   overflow: hidden;
   mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
 }
@@ -217,11 +218,12 @@ h1 {
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
-  font-size: clamp(10px, 1vw, 12px);
+  font-size: clamp(9px, 0.9vw, 11px);
   letter-spacing: -0.02em;
-  line-height: 1.08;
+  line-height: 1.14;
   animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
   transform: translateZ(0);
@@ -234,7 +236,7 @@ h1 {
   max-width: 100%;
   overflow-wrap: anywhere;
   text-align: left;
-  padding: 0;
+  padding: 0 10px;
 }
 
 .hero-copy {
