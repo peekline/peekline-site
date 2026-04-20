@@ -217,7 +217,7 @@ h1 {
 
 .peekline-notch-marquee {
   position: absolute;
-  inset: 30px 90px 16px;
+  inset: 30px 270px 16px;
   overflow: hidden;
   mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
 }
@@ -413,7 +413,7 @@ h1 {
   }
 
   .peekline-notch-marquee {
-    inset: 22px 44px 12px;
+    inset: 22px 132px 12px;
   }
 
   .peekline-notch-track {
