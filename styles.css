@@ -225,7 +225,6 @@ h1 {
 .peekline-notch-track {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 12px;
   width: 100%;
   color: rgba(255, 255, 255, 0.9);
@@ -244,7 +243,7 @@ h1 {
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
 }
 
 .hero-copy {
