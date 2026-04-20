@@ -53,7 +53,7 @@ h1 {
   min-height: 42px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
 }
 
@@ -106,7 +106,7 @@ h1 {
 
 .hero {
   padding: 0 0 64px;
-  margin-top: -42px;
+  margin-top: -44px;
 }
 
 .device-stage {
