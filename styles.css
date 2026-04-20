@@ -104,7 +104,6 @@ h1 {
 
 .hero {
   padding: 0 0 64px;
-  margin-top: -1px;
 }
 
 .device-stage {
@@ -250,7 +249,7 @@ h1 {
 
 .hero-copy {
   max-width: 860px;
-  margin: 20px auto 0;
+  margin: 2px auto 0;
   text-align: center;
 }
 
@@ -402,7 +401,7 @@ h1 {
   }
 
   .hero-copy {
-    margin-top: 18px;
+    margin-top: 2px;
   }
 
   .kicker {
