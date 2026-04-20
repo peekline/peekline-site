@@ -41,7 +41,7 @@ h1 {
 
 .topbar-wrap {
   width: 100%;
-  background: #050507;
+  background: linear-gradient(180deg, rgba(223, 226, 232, 0.95), rgba(162, 167, 177, 0.92));
   position: relative;
   z-index: 4;
 }
@@ -62,13 +62,13 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(13, 16, 20, 0.82);
   font-size: 13px;
 }
 
 .apple,
 .brand-name {
-  color: #fff;
+  color: #050507;
 }
 
 .brand-name {
@@ -81,9 +81,9 @@ h1 {
   align-items: center;
   min-height: 30px;
   padding: 0 12px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.26);
   font-size: 13px;
   transition: transform 180ms ease, background 180ms ease;
 }
@@ -104,6 +104,7 @@ h1 {
 
 .hero {
   padding: 0 0 64px;
+  margin-top: -2px;
 }
 
 .device-stage {
