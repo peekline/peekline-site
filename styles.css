@@ -189,6 +189,7 @@ h1 {
   overflow: hidden;
   display: flex;
   align-items: stretch;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
 }
 
