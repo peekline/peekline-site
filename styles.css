@@ -116,6 +116,7 @@ h1 {
   height: 144px;
   overflow: hidden;
   isolation: isolate;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.24));
 }
 
 .peekline-notch-vector {
@@ -150,40 +151,41 @@ h1 {
 
 .peekline-notch-marquee {
   position: absolute;
-  inset: 17px 10px 12px;
+  inset: 18px 12px 14px;
   overflow: hidden;
-  mask-image: linear-gradient(180deg, transparent, white 10%, white 90%, transparent);
+  display: flex;
+  align-items: stretch;
 }
 
 .peekline-notch-track {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
   width: 100%;
+  height: 100%;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
-  font-size: clamp(8px, 0.85vw, 10px);
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-  animation: notch-text-scroll 18s linear infinite;
-  will-change: transform;
-  transform: translateZ(0);
+  font-size: clamp(8px, 0.82vw, 9px);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
 }
 
 .peekline-line {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  white-space: normal;
+  min-height: 0;
   max-width: 100%;
-  overflow-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: normal;
   text-align: left;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .hero-copy {
   max-width: 860px;
-  margin: 20px auto 0;
+  margin: 28px auto 0;
   text-align: center;
 }
 
@@ -192,7 +194,7 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .pill {
@@ -202,7 +204,7 @@ h1 {
   padding: 0 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(5, 5, 7, 0.42);
+  background: rgba(8, 9, 14, 0.5);
   font-size: 13px;
   backdrop-filter: blur(12px);
 }
@@ -215,16 +217,16 @@ h1 {
   max-width: 10ch;
   margin: 0 auto;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: clamp(54px, 8vw, 104px);
+  font-size: clamp(52px, 7.4vw, 96px);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 0.9;
   letter-spacing: -0.05em;
 }
 
 .kicker {
-  margin-top: 12px;
+  margin-top: 14px;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .lede,
@@ -235,8 +237,8 @@ h1 {
 
 .lede {
   max-width: 40rem;
-  margin: 18px auto 0;
-  font-size: 20px;
+  margin: 16px auto 0;
+  font-size: 19px;
 }
 
 .hero-actions {
@@ -244,7 +246,7 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 14px;
-  margin: 28px 0 14px;
+  margin: 30px 0 14px;
 }
 
 .button {
@@ -274,15 +276,6 @@ h1 {
   font-size: 14px;
 }
 
-@keyframes notch-text-scroll {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
-}
-
 @media (max-width: 1024px) {
   .notch-stage {
     width: min(360px, 62vw);
@@ -293,11 +286,10 @@ h1 {
   }
 
   .peekline-notch-marquee {
-    inset: 18px 10px 12px;
+    inset: 16px 10px 12px;
   }
 
   .peekline-notch-track {
-    gap: 10px;
     font-size: 8px;
   }
 }
@@ -331,18 +323,16 @@ h1 {
   }
 
   .peekline-notch-marquee {
-    inset: 16px 10px 12px;
+    inset: 14px 10px 10px;
   }
 
   .peekline-notch-track {
-    gap: 8px;
-    font-size: 8px;
-    line-height: 1.08;
-    animation-duration: 18s;
+    font-size: 7px;
+    line-height: 1.06;
   }
 
   .hero-copy {
-    margin-top: 18px;
+    margin-top: 20px;
   }
 
   .kicker {
