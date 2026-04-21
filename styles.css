@@ -201,7 +201,8 @@ h1 {
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
   font-size: clamp(8px, 0.82vw, 9px);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  word-spacing: -0.12em;
   line-height: 1.08;
   gap: 10px;
   animation: notch-text-scroll 12s linear infinite;
