@@ -188,9 +188,126 @@ h1 {
   inset: 18px 14px 14px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
+}
+
+.peekline-notch-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 28px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  flex: 0 0 auto;
+}
+
+.peekline-notch-play {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.peekline-notch-play-icon {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid rgba(255, 255, 255, 0.78);
+  margin-left: 1px;
+}
+
+.peekline-notch-timer {
+  margin-right: auto;
+  margin-left: 8px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.peekline-notch-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.peekline-notch-action {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  opacity: 0.88;
+}
+
+.peekline-notch-action-note::before,
+.peekline-notch-action-note::after,
+.peekline-notch-action-sliders::before,
+.peekline-notch-action-sliders::after,
+.peekline-notch-action-close::before,
+.peekline-notch-action-close::after {
+  content: "";
+  position: absolute;
+}
+
+.peekline-notch-action-note::before {
+  inset: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 2px;
+}
+
+.peekline-notch-action-note::after {
+  left: 4px;
+  right: 4px;
+  top: 4px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 3px 0 rgba(255, 255, 255, 0.72);
+}
+
+.peekline-notch-action-sliders::before {
+  inset: 2px 1px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) 0 2px / 100% 1px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) 0 6px / 100% 1px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) 0 10px / 100% 1px no-repeat;
+}
+
+.peekline-notch-action-sliders::after {
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  top: 1px;
+  left: 8px;
+  box-shadow: -5px 4px 0 rgba(255, 255, 255, 0.9), 2px 8px 0 rgba(255, 255, 255, 0.9);
+}
+
+.peekline-notch-action-close::before,
+.peekline-notch-action-close::after {
+  left: 6px;
+  top: 1px;
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.76);
+  border-radius: 999px;
+}
+
+.peekline-notch-action-close::before {
+  transform: rotate(45deg);
+}
+
+.peekline-notch-action-close::after {
+  transform: rotate(-45deg);
 }
 
 .peekline-notch-track {
@@ -207,6 +324,7 @@ h1 {
   gap: 10px;
   animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
+  flex: 1 1 auto;
 }
 
 .peekline-line {
@@ -354,6 +472,11 @@ h1 {
     inset: 16px 12px 12px;
   }
 
+  .peekline-notch-controls {
+    min-height: 24px;
+    margin-bottom: 8px;
+  }
+
   .peekline-notch-track {
     font-size: 8px;
     gap: 9px;
@@ -390,6 +513,30 @@ h1 {
 
   .peekline-notch-marquee {
     inset: 14px 12px 10px;
+  }
+
+  .peekline-notch-controls {
+    min-height: 22px;
+    margin-bottom: 6px;
+  }
+
+  .peekline-notch-play {
+    width: 18px;
+    height: 18px;
+  }
+
+  .peekline-notch-timer {
+    margin-left: 6px;
+    font-size: 7px;
+  }
+
+  .peekline-notch-actions {
+    gap: 10px;
+  }
+
+  .peekline-notch-action {
+    width: 12px;
+    height: 12px;
   }
 
   .peekline-notch-track {
