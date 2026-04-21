@@ -386,7 +386,7 @@ h1 {
 
 .hero h1 {
   max-width: 12ch;
-  margin: 0 auto;
+  margin: 15% 0 0 0;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: clamp(52px, 7.4vw, 96px);
   font-weight: 400;
