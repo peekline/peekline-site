@@ -386,13 +386,13 @@ h1 {
 
 .hero h1 {
   max-width: 12ch;
-  margin: 0 0 0 50%;
+  margin: 0 auto;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: clamp(52px, 7.4vw, 96px);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.05em;
-  text-align: left;
+  text-align: center;
 }
 
 .kicker {
