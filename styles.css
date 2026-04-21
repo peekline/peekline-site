@@ -190,8 +190,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, white 12%, white 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, white 0%, white 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, white 0%, white 82%, transparent 100%);
 }
 
 .peekline-notch-controls {
@@ -333,8 +333,6 @@ h1 {
   animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
   flex: 1 1 auto;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 8%, white 24%, white 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, transparent 8%, white 24%, white 100%);
 }
 
 .peekline-line {
