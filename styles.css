@@ -203,7 +203,7 @@ h1 {
   margin-bottom: 10px;
   color: rgba(255, 255, 255, 0.72);
   flex: 0 0 auto;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 
 .peekline-notch-play {
