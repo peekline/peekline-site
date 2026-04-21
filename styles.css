@@ -198,16 +198,17 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  min-height: 28px;
+  gap: 8px;
+  min-height: 22px;
   margin-bottom: 10px;
   color: rgba(255, 255, 255, 0.72);
   flex: 0 0 auto;
+  padding: 0 8px;
 }
 
 .peekline-notch-play {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
@@ -220,33 +221,39 @@ h1 {
 .peekline-notch-play-icon {
   width: 0;
   height: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 6px solid rgba(255, 255, 255, 0.78);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 5px solid rgba(255, 255, 255, 0.78);
   margin-left: 1px;
 }
 
 .peekline-notch-timer {
   margin-right: auto;
-  margin-left: 8px;
-  font-size: 8px;
+  margin-left: 6px;
+  font-size: 7px;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
 }
 
 .peekline-notch-actions {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
+  min-height: 18px;
 }
 
 .peekline-notch-action {
   position: relative;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
   opacity: 0.88;
+  flex: 0 0 12px;
 }
 
 .peekline-notch-action-note::before,
@@ -294,8 +301,8 @@ h1 {
 
 .peekline-notch-action-close::before,
 .peekline-notch-action-close::after {
-  left: 6px;
-  top: 1px;
+  left: 5px;
+  top: 0;
   width: 1px;
   height: 12px;
   background: rgba(255, 255, 255, 0.76);
