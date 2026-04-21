@@ -93,40 +93,6 @@ h1 {
   margin-top: -44px;
 }
 
-.device-stage {
-  position: fixed;
-  inset: 52px 0 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.device {
-  position: absolute;
-  opacity: 0.42;
-  filter: blur(0.2px);
-}
-
-.device-left {
-  left: -4vw;
-  top: 12vh;
-  transform: rotate(-14deg) scale(0.88);
-}
-
-.device-right {
-  right: -3vw;
-  top: 18vh;
-  transform: rotate(11deg) scale(0.98) scaleX(-1);
-}
-
-.device-image {
-  display: block;
-  width: min(52vw, 820px);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 28px 70px rgba(0, 0, 0, 0.24));
-}
-
 .notch-stage {
   position: relative;
   width: clamp(280px, 42vw, 456px);
@@ -192,15 +158,15 @@ h1 {
 .peekline-notch-track {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
-  font-size: clamp(9px, 0.9vw, 11px);
+  font-size: clamp(8px, 0.85vw, 10px);
   letter-spacing: -0.02em;
-  line-height: 1.14;
-  animation: notch-text-scroll 12s linear infinite;
+  line-height: 1.12;
+  animation: notch-text-scroll 18s linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }
@@ -210,14 +176,14 @@ h1 {
   width: 100%;
   white-space: normal;
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   text-align: left;
   padding: 0 10px;
 }
 
 .hero-copy {
   max-width: 860px;
-  margin: 2px auto 0;
+  margin: 20px auto 0;
   text-align: center;
 }
 
@@ -327,12 +293,12 @@ h1 {
   }
 
   .peekline-notch-marquee {
-    inset: 26px 22px 14px;
+    inset: 18px 10px 12px;
   }
 
   .peekline-notch-track {
     gap: 10px;
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 
@@ -356,22 +322,6 @@ h1 {
     width: min(100% - 20px, 1120px);
   }
 
-  .device-stage {
-    inset: 46px 0 0;
-  }
-
-  .device-left {
-    left: -22vw;
-    top: 16vh;
-    transform: rotate(-16deg) scale(0.52);
-  }
-
-  .device-right {
-    right: -26vw;
-    top: 26vh;
-    transform: rotate(14deg) scale(0.56) scaleX(-1);
-  }
-
   .notch-stage {
     width: min(300px, 74vw);
   }
@@ -381,18 +331,18 @@ h1 {
   }
 
   .peekline-notch-marquee {
-    inset: 16px 10px 10px;
+    inset: 16px 10px 12px;
   }
 
   .peekline-notch-track {
     gap: 8px;
     font-size: 8px;
-    line-height: 1.04;
-    animation-duration: 14s;
+    line-height: 1.08;
+    animation-duration: 18s;
   }
 
   .hero-copy {
-    margin-top: 2px;
+    margin-top: 18px;
   }
 
   .kicker {
