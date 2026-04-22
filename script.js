@@ -30,7 +30,7 @@ function setupPeeklineTextAnimation() {
     const controlsStyle = window.getComputedStyle(controls);
     const controlsHeight = controls.getBoundingClientRect().height;
     const controlsGap = parseFloat(controlsStyle.marginBottom) || 0;
-    const fadeClear = Math.round(controlsHeight + controlsGap);
+    const fadeClear = Math.round((controlsHeight + controlsGap) / 2);
     const fadeSolid = fadeClear + PEEKLINE_FADE_SOFTNESS;
 
     scrollViewport.style.webkitMaskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
