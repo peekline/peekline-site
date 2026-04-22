@@ -132,7 +132,6 @@ h1 {
   height: 144px;
   overflow: hidden;
   isolation: isolate;
-  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.24));
 }
 
 .peekline-notch-vector {
@@ -166,21 +165,7 @@ h1 {
 }
 
 .peekline-notch-shell::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 48%, transparent 100%);
-  transform: translateX(-130%);
-  animation: notch-sheen 7s ease-in-out infinite;
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26 30 Q26 0 0 0 L26 0 L26 0 L478 0 L478 0 L504 0 Q478 0 478 30 L478 134 Q478 160 449 160 L55 160 Q26 160 26 134 Z'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 504 160' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M26 30 Q26 0 0 0 L26 0 L26 0 L478 0 L478 0 L504 0 Q478 0 478 30 L478 134 Q478 160 449 160 L55 160 Q26 160 26 134 Z'/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  pointer-events: none;
+  content: none;
 }
 
 .peekline-notch-marquee {
@@ -459,17 +444,6 @@ h1 {
 
 .meta {
   font-size: 14px;
-}
-
-@keyframes notch-sheen {
-  0%,
-  18% {
-    transform: translateX(-130%);
-  }
-  32%,
-  100% {
-    transform: translateX(130%);
-  }
 }
 
 @media (max-width: 1024px) {
