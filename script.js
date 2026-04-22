@@ -1,4 +1,4 @@
-const PEEKLINE_SCROLL_SPEED = 14;
+const PEEKLINE_SCROLL_SPEED = 12;
 const PEEKLINE_FADE_SOFTNESS = 10;
 
 function setupPeeklineTextAnimation() {
