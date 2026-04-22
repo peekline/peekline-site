@@ -328,11 +328,22 @@ h1 {
   word-spacing: -0.12em;
   line-height: 1.08;
   gap: 10px;
-  animation: notch-text-scroll 12s linear infinite;
   will-change: transform;
   flex: 1 1 auto;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, transparent 30px, white 42px, white 100%);
-  mask-image: linear-gradient(180deg, transparent 0, transparent 30px, white 42px, white 100%);
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    transparent var(--peekline-fade-clear, 30px),
+    white var(--peekline-fade-solid, 42px),
+    white 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    transparent var(--peekline-fade-clear, 30px),
+    white var(--peekline-fade-solid, 42px),
+    white 100%
+  );
 }
 
 .peekline-line {
@@ -459,15 +470,6 @@ h1 {
   }
 }
 
-@keyframes notch-text-scroll {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(calc(-50% - 5px));
-  }
-}
-
 @media (max-width: 1024px) {
   .notch-stage {
     width: min(360px, 62vw);
@@ -489,8 +491,6 @@ h1 {
   .peekline-notch-track {
     font-size: 8px;
     gap: 9px;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0, transparent 28px, white 38px, white 100%);
-    mask-image: linear-gradient(180deg, transparent 0, transparent 28px, white 38px, white 100%);
   }
 }
 
@@ -554,9 +554,6 @@ h1 {
     font-size: 7px;
     line-height: 1.06;
     gap: 8px;
-    animation-duration: 13s;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0, transparent 26px, white 34px, white 100%);
-    mask-image: linear-gradient(180deg, transparent 0, transparent 26px, white 34px, white 100%);
   }
 
   .hero-copy {
