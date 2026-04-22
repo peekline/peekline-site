@@ -322,8 +322,8 @@ h1 {
   width: 100%;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(8px, 0.82vw, 9px);
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: clamp(9px, 0.94vw, 11px);
   letter-spacing: -0.02em;
   word-spacing: -0.12em;
   line-height: 1.08;
@@ -407,7 +407,8 @@ h1 {
 .kicker {
   margin-top: 14px;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 17px;
+  font-size: 19px;
+  text-shadow: none;
 }
 
 .lede,
@@ -419,8 +420,9 @@ h1 {
 .lede {
   max-width: 40rem;
   margin: 16px auto 0;
-  font-size: 19px;
+  font-size: 21px;
   text-align: center;
+  text-shadow: none;
 }
 
 .hero-actions {
