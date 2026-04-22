@@ -4,6 +4,7 @@ const PEEKLINE_FADE_SOFTNESS = 10;
 function setupPeeklineTextAnimation() {
   const scrollViewport = document.querySelector(".peekline-notch-scroll");
   const track = document.querySelector(".peekline-notch-track");
+  const timer = document.querySelector(".peekline-notch-timer");
 
   if (!scrollViewport || !track) {
     return;
@@ -25,6 +26,14 @@ function setupPeeklineTextAnimation() {
   let loopHeight = 0;
   let offset = 0;
   let lastTime = 0;
+  let elapsedSeconds = 0;
+  let timerAccumulator = 0;
+
+  const formatTimer = (totalSeconds) => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  };
 
   const measure = () => {
     const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
@@ -56,6 +65,16 @@ function setupPeeklineTextAnimation() {
         offset -= loopHeight;
       }
       track.style.transform = `translateY(-${offset}px)`;
+    }
+
+    if (timer) {
+      timerAccumulator += delta;
+      if (timerAccumulator >= 1) {
+        const wholeSeconds = Math.floor(timerAccumulator);
+        elapsedSeconds += wholeSeconds;
+        timerAccumulator -= wholeSeconds;
+        timer.textContent = formatTimer(elapsedSeconds);
+      }
     }
 
     window.requestAnimationFrame(animate);
