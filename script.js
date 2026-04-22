@@ -14,10 +14,12 @@ function setupPeeklineTextAnimation() {
     return;
   }
 
-  for (const line of originalLines) {
-    const clone = line.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    track.appendChild(clone);
+  for (let copyIndex = 0; copyIndex < 2; copyIndex += 1) {
+    for (const line of originalLines) {
+      const clone = line.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    }
   }
 
   let loopHeight = 0;
@@ -34,6 +36,10 @@ function setupPeeklineTextAnimation() {
 
     loopHeight = originalLines.reduce((sum, line) => sum + line.getBoundingClientRect().height, 0);
     loopHeight += gap * Math.max(0, originalLines.length - 1);
+    if (loopHeight > 0) {
+      offset = loopHeight;
+      track.style.transform = `translateY(-${offset}px)`;
+    }
   };
 
   const animate = (time) => {
@@ -46,7 +52,7 @@ function setupPeeklineTextAnimation() {
 
     if (loopHeight > 0) {
       offset += PEEKLINE_SCROLL_SPEED * delta;
-      if (offset >= loopHeight) {
+      if (offset >= loopHeight * 2) {
         offset -= loopHeight;
       }
       track.style.transform = `translateY(-${offset}px)`;
