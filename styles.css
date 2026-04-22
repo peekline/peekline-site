@@ -320,6 +320,12 @@ h1 {
   gap: 10px;
 }
 
+.peekline-loop {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+}
+
 .peekline-line {
   display: flex;
   align-items: center;

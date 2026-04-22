@@ -15,13 +15,24 @@ function setupPeeklineTextAnimation() {
     return;
   }
 
-  for (let copyIndex = 0; copyIndex < 2; copyIndex += 1) {
-    for (const line of originalLines) {
-      const clone = line.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      track.appendChild(clone);
+  const originalMarkup = originalLines.map((line) => line.outerHTML).join("");
+  track.innerHTML = "";
+
+  for (let copyIndex = 0; copyIndex < 3; copyIndex += 1) {
+    const loop = document.createElement("div");
+    loop.className = "peekline-loop";
+    loop.innerHTML = originalMarkup;
+
+    if (copyIndex > 0) {
+      for (const clone of loop.querySelectorAll(".peekline-line")) {
+        clone.setAttribute("aria-hidden", "true");
+      }
     }
+
+    track.appendChild(loop);
   }
+
+  const loops = Array.from(track.querySelectorAll(".peekline-loop"));
 
   let loopHeight = 0;
   let offset = 0;
@@ -43,11 +54,15 @@ function setupPeeklineTextAnimation() {
     scrollViewport.style.webkitMaskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
     scrollViewport.style.maskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
 
-    loopHeight = originalLines.reduce((sum, line) => sum + line.getBoundingClientRect().height, 0);
-    loopHeight += gap * Math.max(0, originalLines.length - 1);
+    if (loops.length >= 2) {
+      loopHeight = loops[1].offsetTop - loops[0].offsetTop;
+    } else {
+      loopHeight = 0;
+    }
+
     if (loopHeight > 0) {
       offset = loopHeight;
-      track.style.transform = `translateY(-${offset}px)`;
+      track.style.transform = `translate3d(0, -${offset}px, 0)`;
     }
   };
 
@@ -64,7 +79,7 @@ function setupPeeklineTextAnimation() {
       if (offset >= loopHeight * 2) {
         offset -= loopHeight;
       }
-      track.style.transform = `translateY(-${offset}px)`;
+      track.style.transform = `translate3d(0, -${offset}px, 0)`;
     }
 
     if (timer) {
