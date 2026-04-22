@@ -3,9 +3,10 @@ const PEEKLINE_FADE_SOFTNESS = 10;
 
 function setupPeeklineTextAnimation() {
   const controls = document.querySelector(".peekline-notch-controls");
+  const scrollViewport = document.querySelector(".peekline-notch-scroll");
   const track = document.querySelector(".peekline-notch-track");
 
-  if (!controls || !track) {
+  if (!controls || !scrollViewport || !track) {
     return;
   }
 
@@ -32,8 +33,8 @@ function setupPeeklineTextAnimation() {
     const fadeClear = Math.round(controlsHeight + controlsGap);
     const fadeSolid = fadeClear + PEEKLINE_FADE_SOFTNESS;
 
-    track.style.webkitMaskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
-    track.style.maskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
+    scrollViewport.style.webkitMaskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
+    scrollViewport.style.maskImage = `linear-gradient(180deg, transparent 0, transparent ${fadeClear}px, white ${fadeSolid}px, white 100%)`;
 
     loopHeight = originalLines.reduce((sum, line) => sum + line.getBoundingClientRect().height, 0);
     loopHeight += gap * Math.max(0, originalLines.length - 1);
