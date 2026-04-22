@@ -313,22 +313,7 @@ h1 {
   word-spacing: -0.12em;
   line-height: 1.08;
   gap: 10px;
-  will-change: transform;
   flex: 1 1 auto;
-  -webkit-mask-image: linear-gradient(
-    180deg,
-    transparent 0,
-    transparent var(--peekline-fade-clear, 30px),
-    white var(--peekline-fade-solid, 42px),
-    white 100%
-  );
-  mask-image: linear-gradient(
-    180deg,
-    transparent 0,
-    transparent var(--peekline-fade-clear, 30px),
-    white var(--peekline-fade-solid, 42px),
-    white 100%
-  );
 }
 
 .peekline-line {
